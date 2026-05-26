@@ -79,6 +79,28 @@ The `.dll` file immediately appeared suspicious because DLL files can contain ex
 
 ---
 
+# Obfuscated JavaScript File
+
+Before the deobfuscation process, the malicious JavaScript file presented highly obfuscated code, making manual analysis difficult.
+
+The script used several common obfuscation techniques frequently observed in malware samples, including:
+
+- randomized variable names;
+- hexadecimal values;
+- indirect function calls;
+- encoded strings;
+- unreadable logic structures.
+
+These techniques are used to:
+- hide malicious behavior;
+- evade antivirus detection;
+- complicate reverse engineering;
+- make forensic analysis more difficult.
+
+![Obfuscated Code](screenshots/obfuscated_code.png)
+
+---
+
 # JavaScript Analysis & Deobfuscation
 
 The file `allegato_708.js` was heavily obfuscated.
@@ -89,6 +111,8 @@ After deobfuscating the script, references to:
 - `ActiveXObject`
 
 were identified.
+
+These elements indicated that the malware used the Windows Script Host to execute malicious actions directly on the Windows operating system.
 
 ![Deobfuscated JavaScript](screenshots/js_deobfuscation.png)
 
